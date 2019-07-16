@@ -10,11 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var tap: UITapGestureRecognizer!
+    @IBOutlet weak var cardView: CardView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        AppManager.shared.getFlights()
+     
+        
     }
 
-
+    @IBAction func tap(_ sender: Any) {
+        performSegue(withIdentifier: "toSearch", sender: nil)
+    }
+    
 }
 
