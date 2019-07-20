@@ -65,14 +65,12 @@ struct Datum: Codable{
     let route: [Route]?
     let routes: [[String]]?
     let airlines: [String]?
-//    let nightsInDest: NSNull?
     let pnrCount: Int?
     let hasAirportChange, virtualInterlining: Bool?
     let flyDuration: String?
     let duration: Duration?
     let hashtags: [String]?
     let facilitatedBookingAvailable: Bool?
-//    let conversion: String?
     let bookingToken: String?
     let quality: Double?
 }

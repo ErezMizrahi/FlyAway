@@ -15,7 +15,6 @@ class NetworkCalls {
     private init() {}
     
     typealias callback = (_: Result?, _ err: Error?)->Void
-    
     func TryDecode (data: Data?, callback: callback)  {
         guard let data = data else { return }
         print(data)
@@ -31,7 +30,7 @@ class NetworkCalls {
 
 enum Network{
     enum Flightsprovider: TargetType {
-        case flights(from: String, to: String, start: String, end: String)
+        case flights(from: String, to: String, start: String, end: String, adults: String)
         
         var baseURL: URL{
             return URL(string: "https://api.skypicker.com")!
@@ -54,11 +53,12 @@ enum Network{
         
         var task: Task {
             switch self {
-            case let .flights(from, to, start, end):
+            case let .flights(from, to, start, end, adults):
                 return .requestParameters(parameters: ["flyFrom": from,
                                                        "to": to,
                                                        "dateFrom": start,
-                                                       "dateTo": end],
+                                                       "dateTo": end,
+                                                       "adults": adults],
                                           encoding: URLEncoding.queryString)
             }
         }
