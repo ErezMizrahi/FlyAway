@@ -58,7 +58,8 @@ enum Network{
                                                        "to": to,
                                                        "dateFrom": start,
                                                        "dateTo": end,
-                                                       "adults": adults],
+                                                       "adults": adults,
+                                                       "limit": 3],
                                           encoding: URLEncoding.queryString)
             }
         }

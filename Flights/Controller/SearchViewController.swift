@@ -18,15 +18,20 @@ class SearchViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Search"
         
         AppManager.shared.getFlights(info: info!) {[weak self] (res, err) in
             if let error = err {
                 print("this is an error with the server call: \(error)")
             }
             
-            guard let self = self, let res = res else { return }
+            guard let self = self, let res = res,
+                let from = res.data?.first?.countryFrom,
+                let to = res.data?.last?.countryTo else { return }
+            
             self.arr = res.data?.compactMap{ FlightsSearchViewModel.init($0)}
+            
+            self.navigationItem.title = from.name! + " -> " + to.name!
+            
             self.collectionview.delegate = self
             self.collectionview.dataSource = self
             self.collectionview.reloadData()

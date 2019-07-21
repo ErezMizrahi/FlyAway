@@ -9,13 +9,34 @@
 import UIKit
 import CoreData
 
+struct CountryData{
+    let name : String
+    let code : String
+    
+    static var all : [CountryData]{
+        
+        let allLocales = NSLocale.availableLocaleIdentifiers.compactMap{ Locale(identifier: $0) as NSLocale}
+        let allCounties = allLocales.compactMap{ $0.countryCode }
+        let myLocale = NSLocale.current as NSLocale
+        return allCounties.compactMap{
+            if let name = myLocale.displayName(forKey: .countryCode, value: $0){
+                return CountryData(name: name, code: $0)
+            } else {
+                return nil
+            }
+        }
+        
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var flow: FlowManager?
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let arr = CountryData.all
         
         let navController = UINavigationController()
     

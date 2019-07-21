@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D13815C22E4C1E5000C3EA3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13815B22E4C1E5000C3EA3 /* MainViewController.swift */; };
 		6DBE373222DCE856000BE67A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE373122DCE856000BE67A /* AppDelegate.swift */; };
 		6DBE373422DCE856000BE67A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE373322DCE856000BE67A /* ViewController.swift */; };
 		6DBE373722DCE856000BE67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBE373522DCE856000BE67A /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		13F369BBF0BBC5ECD0EF0444 /* Pods-Flights.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flights.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flights/Pods-Flights.release.xcconfig"; sourceTree = "<group>"; };
 		1B97FE8B5DC0443D1AD0FCE9 /* Pods_Flights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D13815B22E4C1E5000C3EA3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6DBE372E22DCE856000BE67A /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBE373122DCE856000BE67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DBE373322DCE856000BE67A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				6DBE374E22DD139A000BE67A /* SearchViewController.swift */,
 				6DBE373322DCE856000BE67A /* ViewController.swift */,
+				6D13815B22E4C1E5000C3EA3 /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,26 +255,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Flights/Pods-Flights-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Flights/Pods-Flights-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Flights/Pods-Flights-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flights/Pods-Flights-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flights/Pods-Flights-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8A3566FF7995BCC31A69092B /* [CP] Check Pods Manifest.lock */ = {
@@ -310,6 +302,7 @@
 				6DBE373422DCE856000BE67A /* ViewController.swift in Sources */,
 				6DBE375E22E2E9D0000BE67A /* FlightsSearchViewModel.swift in Sources */,
 				6DBE374A22DCFFF9000BE67A /* CardView.swift in Sources */,
+				6D13815C22E4C1E5000C3EA3 /* MainViewController.swift in Sources */,
 				6DBE375322DE286A000BE67A /* Network.swift in Sources */,
 				6DBE373222DCE856000BE67A /* AppDelegate.swift in Sources */,
 				6DBE375622DE2B87000BE67A /* AppManager.swift in Sources */,

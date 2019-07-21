@@ -12,24 +12,24 @@ class CardView: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.cornerRadius = 25
+        self.layer.cornerRadius = 10
 //        self.layer.masksToBounds = true
         self.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize.zero
-        self.layer.shadowRadius = 20
-        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 10
+        self.layer.shadowOpacity = 0.6
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.layer.cornerRadius = 25
+        self.layer.cornerRadius = 10
 //        self.layer.masksToBounds = true
         self.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize.zero
-        self.layer.shadowRadius = 20
-        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 10
+        self.layer.shadowOpacity = 0.6
     }
     
     

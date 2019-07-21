@@ -54,12 +54,16 @@ class ViewController: UIViewController {
                 return
         }
         
+        //
+        let toPlace = CountryData.all.filter{$0.name == to}.first
+        let fromPlace = CountryData.all.filter{$0.name == from}.first
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         let sDate = formatter.string(from: startDate)
         let eDate = formatter.string(from: endDate)
         
-        self.searchDelegate?.searchButtonTapped(from: from, to: to, numOfPassngers: numOfPassngers, startDate: sDate, endDate: eDate)
+        self.searchDelegate?.searchButtonTapped(from: (fromPlace?.code)!, to: (toPlace?.code)!, numOfPassngers: numOfPassngers, startDate: sDate, endDate: eDate)
 
     }
     
