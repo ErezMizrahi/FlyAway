@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6D13815C22E4C1E5000C3EA3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13815B22E4C1E5000C3EA3 /* MainViewController.swift */; };
+		6D13816022E8B3A4000C3EA3 /* AutoSegTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13815F22E8B3A4000C3EA3 /* AutoSegTableViewController.swift */; };
+		6D13816422E8D114000C3EA3 /* RoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13816322E8D114000C3EA3 /* RoutsViewController.swift */; };
+		6D13816622E8D14F000C3EA3 /* RoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13816522E8D14F000C3EA3 /* RoutCell.swift */; };
+		6D13816822E8D28B000C3EA3 /* RoutsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13816722E8D28B000C3EA3 /* RoutsViewModel.swift */; };
 		6DBE373222DCE856000BE67A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE373122DCE856000BE67A /* AppDelegate.swift */; };
 		6DBE373422DCE856000BE67A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE373322DCE856000BE67A /* ViewController.swift */; };
 		6DBE373722DCE856000BE67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBE373522DCE856000BE67A /* Main.storyboard */; };
@@ -31,6 +35,10 @@
 		13F369BBF0BBC5ECD0EF0444 /* Pods-Flights.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flights.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flights/Pods-Flights.release.xcconfig"; sourceTree = "<group>"; };
 		1B97FE8B5DC0443D1AD0FCE9 /* Pods_Flights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D13815B22E4C1E5000C3EA3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6D13815F22E8B3A4000C3EA3 /* AutoSegTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSegTableViewController.swift; sourceTree = "<group>"; };
+		6D13816322E8D114000C3EA3 /* RoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutsViewController.swift; sourceTree = "<group>"; };
+		6D13816522E8D14F000C3EA3 /* RoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutCell.swift; sourceTree = "<group>"; };
+		6D13816722E8D28B000C3EA3 /* RoutsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutsViewModel.swift; sourceTree = "<group>"; };
 		6DBE372E22DCE856000BE67A /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBE373122DCE856000BE67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DBE373322DCE856000BE67A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +113,7 @@
 			children = (
 				6DBE374B22DD06CB000BE67A /* Cells */,
 				6DBE374922DCFFF9000BE67A /* CardView.swift */,
+				6D13816522E8D14F000C3EA3 /* RoutCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +132,8 @@
 				6DBE374E22DD139A000BE67A /* SearchViewController.swift */,
 				6DBE373322DCE856000BE67A /* ViewController.swift */,
 				6D13815B22E4C1E5000C3EA3 /* MainViewController.swift */,
+				6D13815F22E8B3A4000C3EA3 /* AutoSegTableViewController.swift */,
+				6D13816322E8D114000C3EA3 /* RoutsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				6DBE375D22E2E9D0000BE67A /* FlightsSearchViewModel.swift */,
+				6D13816722E8D28B000C3EA3 /* RoutsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -295,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D13816422E8D114000C3EA3 /* RoutsViewController.swift in Sources */,
 				6DBE375922DE3396000BE67A /* Result.swift in Sources */,
 				6DBE376622E3695B000BE67A /* SelectionInformation.swift in Sources */,
 				6DBE374F22DD139A000BE67A /* SearchViewController.swift in Sources */,
@@ -302,12 +315,15 @@
 				6DBE373422DCE856000BE67A /* ViewController.swift in Sources */,
 				6DBE375E22E2E9D0000BE67A /* FlightsSearchViewModel.swift in Sources */,
 				6DBE374A22DCFFF9000BE67A /* CardView.swift in Sources */,
+				6D13816022E8B3A4000C3EA3 /* AutoSegTableViewController.swift in Sources */,
 				6D13815C22E4C1E5000C3EA3 /* MainViewController.swift in Sources */,
 				6DBE375322DE286A000BE67A /* Network.swift in Sources */,
 				6DBE373222DCE856000BE67A /* AppDelegate.swift in Sources */,
 				6DBE375622DE2B87000BE67A /* AppManager.swift in Sources */,
 				6DBE376422E35B51000BE67A /* FlowManager.swift in Sources */,
+				6D13816622E8D14F000C3EA3 /* RoutCell.swift in Sources */,
 				6DBE375B22E11CB4000BE67A /* FlightsDetailCell.swift in Sources */,
+				6D13816822E8D28B000C3EA3 /* RoutsViewModel.swift in Sources */,
 				6DBE376222E3598E000BE67A /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

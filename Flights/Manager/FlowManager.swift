@@ -38,8 +38,26 @@ extension FlowManager: ISearchLogic {
     func searchButtonTapped(from: String, to: String, numOfPassngers: String, startDate: String, endDate: String) {
         
         let sVC = SearchViewController.instantiate()
+        
         sVC.info = SelectionInformation(startDate: startDate, endDate: endDate, flyFrom: from, flyTo: to, numberOfPassngers: numOfPassngers)
+        
+        sVC.routeDelegate = self
         
         self.navigationController.pushViewController(sVC, animated: true)
     }
+}
+
+
+extension FlowManager: didSelectFlight{
+    func showRouts(_ data: [Route]?) {
+        let vmArr = data?.compactMap{RoutsViewModel.init(data: $0)}
+        
+        let vc = RoutsViewController.instantiate()
+        
+        vc.routs = vmArr ?? []
+        
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    
 }

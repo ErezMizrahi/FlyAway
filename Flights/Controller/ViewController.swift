@@ -42,7 +42,10 @@ class ViewController: UIViewController {
      
         
     }
+    
+    
 
+    
     @IBAction func tap(_ sender: Any) {
         
         guard let from = fromField.text,
@@ -57,6 +60,7 @@ class ViewController: UIViewController {
         //
         let toPlace = CountryData.all.filter{$0.name == to}.first
         let fromPlace = CountryData.all.filter{$0.name == from}.first
+
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
@@ -87,10 +91,29 @@ class ViewController: UIViewController {
         self.numberOfPassngersLabel.text = "\(Int(sender.value))"
         
     }
+    
+    @IBAction func showSuggestion(_ sender: UITextField) {
+        let vc = AutoSegTableViewController.instantiate()
+        vc.tableDelegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+}
+
+extension ViewController: Storyboarded, didSelectCountry{
+    
+    func setTextFields(_ country: String) {
+        if (fromField.text?.count)! < 1 {
+            fromField.text = country
+        } else {
+            toField.text = country
+        }
+    }
 }
 
 
-extension ViewController: FSCalendarDelegate, FSCalendarDataSource, Storyboarded {
+extension ViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
      // if notiong is selected

@@ -59,7 +59,7 @@ enum Network{
                                                        "dateFrom": start,
                                                        "dateTo": end,
                                                        "adults": adults,
-                                                       "limit": 3],
+                                                       "partner": "picky"],
                                           encoding: URLEncoding.queryString)
             }
         }

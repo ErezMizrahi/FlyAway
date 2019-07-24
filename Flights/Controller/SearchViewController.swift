@@ -8,13 +8,20 @@
 
 import UIKit
 
+protocol didSelectFlight: class{
+    func showRouts(_ data: [Route]?)
+}
 
 
 class SearchViewController: UIViewController, Storyboarded {
-
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var collectionview: UICollectionView!
     var info: SelectionInformation?
     var arr: [FlightsSearchViewModel]?
+    var data: [Datum]?
+    
+    weak var routeDelegate: didSelectFlight?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +36,11 @@ class SearchViewController: UIViewController, Storyboarded {
                 let to = res.data?.last?.countryTo else { return }
             
             self.arr = res.data?.compactMap{ FlightsSearchViewModel.init($0)}
+            self.data = res.data
             
             self.navigationItem.title = from.name! + " -> " + to.name!
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = !self.indicator.isHidden
             
             self.collectionview.delegate = self
             self.collectionview.dataSource = self
@@ -63,6 +73,10 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         return CGSize(width: self.view.frame.width, height: 200)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let route = data?[indexPath.row].route
+        self.routeDelegate?.showRouts(route)
+    }
  
   
     

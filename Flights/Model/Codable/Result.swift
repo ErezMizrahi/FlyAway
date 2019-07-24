@@ -17,7 +17,6 @@ struct Result: Codable {
     let time: Int?
     let currency: String?
     let currencyRate, fxRate: Int?
-    let del: Int?
     let airlinesList: [AirlinesList]?
     let airportsList: [AirportsList]?
     let allAirlines: [String]?

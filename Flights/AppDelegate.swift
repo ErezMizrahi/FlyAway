@@ -35,9 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var flow: FlowManager?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let arr = CountryData.all
-        
+                
         let navController = UINavigationController()
     
         flow = FlowManager(navigationController: navController)
