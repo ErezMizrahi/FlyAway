@@ -18,9 +18,8 @@ class FlowManager {
     }
     
     func start() {
-//        let vc = ViewController.instantiate()
         let vc = MainViewController.instantiate()
-//        vc.searchDelegate = self
+        vc.searchDelegate = self
         vc.callback = {
             self.goScreen()
         }
@@ -40,7 +39,6 @@ extension FlowManager: ISearchLogic {
         let sVC = SearchViewController.instantiate()
         
         sVC.info = SelectionInformation(startDate: startDate, endDate: endDate, flyFrom: from, flyTo: to, numberOfPassngers: numOfPassngers)
-        
         sVC.routeDelegate = self
         
         self.navigationController.pushViewController(sVC, animated: true)
@@ -49,15 +47,15 @@ extension FlowManager: ISearchLogic {
 
 
 extension FlowManager: didSelectFlight{
-    func showRouts(_ data: [Route]?) {
-        let vmArr = data?.compactMap{RoutsViewModel.init(data: $0)}
-        
+    func showRouts(_ route: [Route]?, data: Datum) {
+        let vmArr = route?.compactMap{RoutsViewModel.init(data: $0)}
         let vc = RoutsViewController.instantiate()
         
         vc.routs = vmArr ?? []
-        
-        self.navigationController.pushViewController(vc, animated: true)
+        vc.infoVM = data
+            self.navigationController.pushViewController(vc, animated: true)
     }
+    
     
     
 }

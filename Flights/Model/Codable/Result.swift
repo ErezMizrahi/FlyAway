@@ -49,7 +49,7 @@ struct BestResult: Codable {
 
 // MARK: - Datum
 struct Datum: Codable{
-
+    let nightsInDest: Int?
     let id: String?
     let countryFrom, countryTo: Country?
     let bagsPrice: [String: Double]?

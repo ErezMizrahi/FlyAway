@@ -25,11 +25,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberOfPassngersLabel: UILabel!
     
     weak var searchDelegate: ISearchLogic?
+    var isFirstTextField: Bool = true
     
-    var firstDate: Date?
-    var lastDate: Date?
-    var dateRange: [Date]?
-    
+    var calendarVM = ClanedarViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +49,8 @@ class ViewController: UIViewController {
         guard let from = fromField.text,
                 let to = toField.text,
                 let numOfPassngers = numberOfPassngersLabel.text,
-                let startDate = dateRange?.first,
-                let endDate = dateRange?.last
+                let startDate = calendarVM.dateRange?.first,
+                let endDate = calendarVM.dateRange?.last
         else {
                 return
         }
@@ -72,20 +70,6 @@ class ViewController: UIViewController {
     }
     
 
-    
-    private func rangeOfDates(from: Date, to: Date) -> [Date] {
-        if from > to { return [] }
-        
-        var tempDate = from
-        var arr = [tempDate]
-        
-        while tempDate < to {
-            tempDate = Calendar.current.date(byAdding: .day, value: 1, to: tempDate)!
-            arr.append(tempDate)
-        }
-        return arr
-    }
-    
     @IBAction func stpperAction(_ sender: UIStepper) {
         
         self.numberOfPassngersLabel.text = "\(Int(sender.value))"
@@ -93,6 +77,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showSuggestion(_ sender: UITextField) {
+       isFirstTextField = sender.tag == 0 ? true : false
         let vc = AutoSegTableViewController.instantiate()
         vc.tableDelegate = self
         self.present(vc, animated: true, completion: nil)
@@ -104,7 +89,7 @@ class ViewController: UIViewController {
 extension ViewController: Storyboarded, didSelectCountry{
     
     func setTextFields(_ country: String) {
-        if (fromField.text?.count)! < 1 {
+        if (isFirstTextField){
             fromField.text = country
         } else {
             toField.text = country
@@ -116,63 +101,14 @@ extension ViewController: Storyboarded, didSelectCountry{
 extension ViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-     // if notiong is selected
-        if firstDate == nil {
-            self.firstDate = date
-            dateRange = [firstDate!]
-            return
-        }
-        
-        // only firstDate is selected
-        if firstDate != nil && lastDate == nil {
-            
-            // if date is smaller then irstDate
-            if date <= firstDate! {
-                calendar.deselect(firstDate!)
-                firstDate = date
-                dateRange = [firstDate!]
-                return
-            }
-            
-            //if date is bigger
-            let range = rangeOfDates(from: firstDate!, to: date)
-            
-            //last date
-            self.lastDate = range.last
-            
-            for someDate in range {
-                calendar.select(someDate)
-            }
-            
-            dateRange = range
-            return
-            
-        }
-        
-        // Both selected
-        if firstDate != nil && lastDate != nil {
-            for someDate in calendar.selectedDates {
-                calendar.deselect(someDate)
-            }
-            firstDate = nil
-            lastDate = nil
-            dateRange = []
-            
-        }
-        
+        calendarVM.chooseDate(date: date, calendar)
+
         
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        if firstDate != nil && lastDate != nil {
-            for someDate in calendar.selectedDates {
-                calendar.deselect(someDate)
-            }
-            firstDate = nil
-            lastDate = nil
-            dateRange = []
-            
-        }
+        calendarVM.deSelectDate(calendar)
+
     }
     
 }

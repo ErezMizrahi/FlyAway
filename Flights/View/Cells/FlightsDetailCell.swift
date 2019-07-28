@@ -16,8 +16,8 @@ class FlightsDetailCell: UICollectionViewCell {
     @IBOutlet weak var toLabel: UILabel!
     
     func populateCell(with info: FlightsSearchViewModel) {
-        fromLabel.text = info.fromString
-        toLabel.text = info.toString
+        fromLabel.text = "\(info.fromString) to \(info.toString)"
+        toLabel.text = "\(info.toString) to \(info.fromString)"
         priceLabel.text = info.price
         arrivalLabel.text = info.arrival
         departureLabel.text = info.departure

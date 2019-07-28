@@ -9,7 +9,7 @@
 import UIKit
 
 protocol didSelectFlight: class{
-    func showRouts(_ data: [Route]?)
+    func showRouts(_ route: [Route]?, data: Datum)
 }
 
 
@@ -25,20 +25,26 @@ class SearchViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Flights"
+        //
+        print(info)
+        //
         
         AppManager.shared.getFlights(info: info!) {[weak self] (res, err) in
             if let error = err {
                 print("this is an error with the server call: \(error)")
             }
             
-            guard let self = self, let res = res,
-                let from = res.data?.first?.countryFrom,
-                let to = res.data?.last?.countryTo else { return }
+            guard let self = self, let res = res else { return }
+    
             
             self.arr = res.data?.compactMap{ FlightsSearchViewModel.init($0)}
+            if self.arr == nil {
+                self.alert(message: "we cant find flights", title: "OPS!")
+            }
             self.data = res.data
             
-            self.navigationItem.title = from.name! + " -> " + to.name!
+            
             self.indicator.stopAnimating()
             self.indicator.isHidden = !self.indicator.isHidden
             
@@ -75,9 +81,21 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let route = data?[indexPath.row].route
-        self.routeDelegate?.showRouts(route)
+        guard let d = data?[indexPath.row] else { return }
+        self.routeDelegate?.showRouts(route,data: d)
     }
  
   
+    
+}
+
+extension UIViewController {
+    
+    func alert(message: String, title: String = "") {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
 }

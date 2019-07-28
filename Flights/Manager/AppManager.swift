@@ -23,12 +23,11 @@ class AppManager {
                     if let err = err {
                         callback(nil,err)
                     } else {
-                       
                         callback(res, nil)
                     }
                 })
             case .failure(let error):
-                print(error)
+                callback(nil,error)
             }
         }
     }
