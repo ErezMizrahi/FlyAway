@@ -14,17 +14,6 @@ struct RoutsViewModel{
     let aTime: String
     let dTIme: String
     
-    static func timeFormmater(time: Int) -> String {
-        let timeFormmater = DateFormatter()
-        let timeStemp = Date(timeIntervalSince1970: TimeInterval(time))
-        
-        timeFormmater.dateStyle = .medium
-        timeFormmater.timeStyle = .medium
-        timeFormmater.timeZone = .current
-        
-        return timeFormmater.string(from: timeStemp)
-        
-    }
 }
 
 extension RoutsViewModel{
@@ -32,15 +21,15 @@ extension RoutsViewModel{
         
         guard let from = data.cityFrom,
             let to = data.cityTo,
-            let atime =  data.aTime ,
-            let dtime =  data.dTime
+            let atime =  data.dTimeUTC ,
+            let dtime =  data.aTimeUTC
         else {
                 return nil
         }
         
         cityFrom = from
         cityTo = to
-        aTime = RoutsViewModel.timeFormmater(time: atime)
-        dTIme = RoutsViewModel.timeFormmater(time: dtime)
+        aTime = atime.dateFormatter()
+        dTIme = dtime.dateFormatter()
     }
 }

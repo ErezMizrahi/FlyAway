@@ -11,8 +11,7 @@ import UIKit
 class RoutsViewController: UIViewController, Storyboarded {
     
     enum SectionHeaders: String, CaseIterable {
-        case routs
-        case info
+        case Routes
     }
 
     @IBOutlet weak var tableview: UITableView!
@@ -23,8 +22,8 @@ class RoutsViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(infoVM)
-        
+        self.navigationItem.largeTitleDisplayMode = .never
+
         self.tableview.delegate = self
         self.tableview.dataSource = self
         self.tableview.reloadData()
@@ -39,21 +38,11 @@ extension RoutsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        switch indexPath.section {
-        case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellRouts", for: indexPath) as! RoutCell
             let vm = routs[indexPath.row]
             cell.populate(vm)
             return cell
-        case 1:
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-            cell.textLabel?.text = infoVM?.flyDuration
-            cell.detailTextLabel?.text = "fly Duration: \(infoVM?.nightsInDest)"
-            return cell
-        default:
-            break
-        }
-        return UITableViewCell()
+  
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -58,7 +58,12 @@ enum Network{
                                                        "to": to,
                                                        "dateFrom": start,
                                                        "dateTo": end,
+                                                       "return_from": end,
+                                                       "return_to": end,
                                                        "adults": adults,
+                                                       "nights_in_dst_from": 1,
+                                                       "nights_in_dst_to": 6,
+                                                       "sort":  "quality",
                                                        "partner": "picky"],
                                           encoding: URLEncoding.queryString)
             }

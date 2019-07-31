@@ -26,37 +26,38 @@ class SearchViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Flights"
-        //
-        print(info)
-        //
+     
         
         AppManager.shared.getFlights(info: info!) {[weak self] (res, err) in
             if let error = err {
                 print("this is an error with the server call: \(error)")
             }
-            
             guard let self = self, let res = res else { return }
+            self.convertResultToVM(result: res)
+            self.updateIndicator()
+            self.updateCollection()
+        }
+        
+        }
     
-            
-            self.arr = res.data?.compactMap{ FlightsSearchViewModel.init($0)}
-            if self.arr == nil {
-                self.alert(message: "we cant find flights", title: "OPS!")
+    func convertResultToVM(result res: Result){
+        arr = res.data?.compactMap{ FlightsSearchViewModel.init($0)}
+        if arr == nil {
+            self.alert(message: "we cant find flights", title: "OPS!")
             }
-            self.data = res.data
-            
-            
-            self.indicator.stopAnimating()
-            self.indicator.isHidden = !self.indicator.isHidden
-            
-            self.collectionview.delegate = self
-            self.collectionview.dataSource = self
-            self.collectionview.reloadData()
-        }
-        
-        }
-        
-        // Do any additional setup after loading the view.
-      
+        data = res.data
+    }
+    
+    func updateCollection(){
+        collectionview.delegate = self
+        collectionview.dataSource = self
+        collectionview.reloadData()
+    }
+    
+    func updateIndicator(){
+        indicator.stopAnimating()
+        indicator.isHidden = !self.indicator.isHidden
+    }
     }
     
 
