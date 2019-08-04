@@ -17,24 +17,21 @@ class MainViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Welcome"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        // Do any additional setup after loading the view.
         
+        setupNavBar()
         self.tableview.delegate = self
         self.tableview.dataSource = self
         self.tableview.reloadData()
     }
     
-
+    private func setupNavBar() {
+        navigationItem.hidesBackButton = true
+    }
 
     @IBAction func searchAction(_ sender: UIButton) {
         callback?()
     }
-    
-    @IBAction func test(_ sender: Any) {
-     
-    }
+
 }
 
 
@@ -53,6 +50,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         //by defalt its from israel.. could get user location and determine the flight accurdingly
         tableView.deselectRow(at: indexPath, animated: true)
         let todayDate = Date()
@@ -60,7 +58,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         
-        searchDelegate?.searchButtonTapped(from: "IL", to: Dest.topDest[indexPath.row].code, numOfPassngers: "1", startDate: formatter.string(from: todayDate), endDate: formatter.string(from: oneWeek ?? Date()))
+        let info = SelectionInformation(startDate: formatter.string(from: todayDate), endDate: formatter.string(from: oneWeek ?? Date()), flyFrom: "IL", flyTo: Dest.topDest[indexPath.row].code, numberOfPassngers: "1")
+        
+        searchDelegate?.searchButtonTapped(info: info)
     }
     
 }

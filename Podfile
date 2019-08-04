@@ -8,4 +8,6 @@ target 'Flights' do
   # Pods for Flights
 pod 'Moya'
 pod 'FSCalendar'
+pod 'lottie-ios'
+
 end

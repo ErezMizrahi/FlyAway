@@ -19,6 +19,7 @@ class AppManager {
         networkService.request(.flights(from: info.flyFrom, to: info.flyTo, start: info.startDate, end: info.endDate, adults: info.numberOfPassngers)) { (result) in
             switch result {
             case .success(let response):
+                //print(String(data: response.data, encoding: .utf8) ?? "")
                 NetworkCalls.shared.TryDecode(data: response.data, callback: { (res, err) in
                     if let err = err {
                         callback(nil,err)
@@ -31,7 +32,6 @@ class AppManager {
             }
         }
     }
-    
-   
+
     
 }

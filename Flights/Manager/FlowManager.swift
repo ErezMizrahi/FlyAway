@@ -18,31 +18,41 @@ class FlowManager {
     }
     
     func start() {
-        let vc = MainViewController.instantiate()
-        vc.searchDelegate = self
-        vc.callback = {
-            self.goScreen()
-        }
+        let vc = SplashScreenViewController.instantiate()
+        vc.splashDelegate = self
         self.navigationController.pushViewController(vc, animated: true)
     }
     
-    private func goScreen ()  {
+    
+    private func goViewControllerScreen ()  {
         let vc = ViewController.instantiate()
         vc.searchDelegate = self
         self.navigationController.pushViewController(vc, animated: true)
     }
 }
 
+extension FlowManager: IStartSearch {
+    func letsSearch() {
+            let vc = MainViewController.instantiate()
+            vc.searchDelegate = self
+            vc.callback = {
+                self.goViewControllerScreen()
+            }
+            self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    
+}
+
 extension FlowManager: ISearchLogic {
-    func searchButtonTapped(from: String, to: String, numOfPassngers: String, startDate: String, endDate: String) {
-        
+    func searchButtonTapped(info: SelectionInformation) {
         let sVC = SearchViewController.instantiate()
-        
-        sVC.info = SelectionInformation(startDate: startDate, endDate: endDate, flyFrom: from, flyTo: to, numberOfPassngers: numOfPassngers)
+        sVC.info = info
         sVC.routeDelegate = self
-        
         self.navigationController.pushViewController(sVC, animated: true)
     }
+    
+  
 }
 
 

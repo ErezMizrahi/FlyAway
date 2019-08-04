@@ -9,6 +9,11 @@
 import UIKit
 
 class TopDestCell: UITableViewCell {
+    
+    override func awakeFromNib() {
+        self.selectionStyle = .none
+    }
+    
     @IBOutlet weak var destImg: UIImageView! {
         didSet {
             destImg.layer.cornerRadius = 25

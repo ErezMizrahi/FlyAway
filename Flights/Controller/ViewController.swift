@@ -9,13 +9,6 @@
 import UIKit
 import FSCalendar
 
-protocol ISearchLogic: class {
-    func searchButtonTapped(from: String,
-                            to: String,
-                            numOfPassngers: String,
-                            startDate: String,
-                            endDate: String)
-}
 
 class ViewController: UIViewController {
 
@@ -31,42 +24,29 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+
         self.calendar.delegate = self
         self.calendar.dataSource = self
         self.calendar.allowsMultipleSelection = true
         self.numberOfPassngersLabel.text = "\(1)"
      
-        
     }
     
     
 
     
     @IBAction func tap(_ sender: Any) {
-        
         guard let from = fromField.text,
                 let to = toField.text,
                 let numOfPassngers = numberOfPassngersLabel.text,
                 let startDate = calendarVM.dateRange?.first,
-                let endDate = calendarVM.dateRange?.last
-        else {
-                return
-        }
+                let endDate = calendarVM.dateRange?.last else {
+                    return
+                }
         
-        //
-        let toPlace = CountryData.all.filter{$0.name == to}.first
-        let fromPlace = CountryData.all.filter{$0.name == from}.first
-
+                guard let info = SelectionInformation(startDate: startDate, endDate: endDate, flyFrom: from, flyTo: to, numberOfPassngers: numOfPassngers) else { return }
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        let sDate = formatter.string(from: startDate)
-        let eDate = formatter.string(from: endDate)
-        
-        self.searchDelegate?.searchButtonTapped(from: (fromPlace?.code)!, to: (toPlace?.code)!, numOfPassngers: numOfPassngers, startDate: sDate, endDate: eDate)
-
+                self.searchDelegate?.searchButtonTapped(info: info)
     }
     
 

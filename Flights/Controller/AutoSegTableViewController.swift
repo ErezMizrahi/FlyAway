@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol didSelectCountry: class {
-    func setTextFields(_ country: String)
-}
+
 
 class AutoSegTableViewController: UIViewController, Storyboarded {
     var arr = [CountryData]()

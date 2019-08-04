@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: - Welcome
 struct Result: Codable {
-    let searchID: String?
+    let search_id: String?
     let data: [Datum]?
     let connections: [String?]?
     let time: Int?
@@ -19,22 +19,22 @@ struct Result: Codable {
     let currencyRate, fxRate: Int?
     let airlinesList: [AirlinesList]?
     let airportsList: [AirportsList]?
-    let allAirlines: [String]?
-    let allPrices: [String: Int]?
-    let allStopoverAirports: [String]?
-    let bestResults: [BestResult]?
+    let all_airlines: [String]?
+    let all_prices: [String: Int]?
+    let all_stopoverAirports: [String]?
+    let best_results: [BestResult]?
     let hashtags: [Hashtag]?
-    let locationHashtags: [String]?
+    let location_hashtags: [String]?
 }
 
 // MARK: - AirlinesList
 struct AirlinesList: Codable {
-    let filterName: String?
+    let filter_name: String?
 }
 
 // MARK: - AirportsList
 struct AirportsList: Codable {
-    let filterName: String?
+    let filter_name: String?
     let name: String?
 }
 
@@ -52,7 +52,7 @@ struct Datum: Codable{
     let nightsInDest: Int?
     let id: String?
     let countryFrom, countryTo: Country?
-    let bagsPrice: [String: Double]?
+    let bags_price: [String: Double]?
     let baglimit: Baglimit?
     let dTime, aTime, dTimeUTC, p1: Int?
     let p2, p3, aTimeUTC, price: Int?
@@ -65,11 +65,11 @@ struct Datum: Codable{
     let routes: [[String]]?
     let airlines: [String]?
     let pnrCount: Int?
-    let hasAirportChange, virtualInterlining: Bool?
-    let flyDuration: String?
+    let has_airport_change, virtual_interlining: Bool?
+    let fly_duration: String?
     let duration: Duration?
     let hashtags: [String]?
-    let facilitatedBookingAvailable: Bool?
+//    let facilitatedBookingAvailable: Bool?
     let bookingToken: String?
     let quality: Double?
 }
@@ -77,9 +77,9 @@ struct Datum: Codable{
 
 // MARK: - Baglimit
 struct Baglimit: Codable {
-    let holdWidth, holdHeight, holdLength, holdDimensionsSum: Int?
-    let holdWeight, handWidth, handHeight, handLength: Int?
-    let handWeight: Int?
+    let hold_width, hold_height, hold_length, hold_dimensions_sum: Int?
+    let hold_weight, hand_hidth, hand_height, hand_length: Int?
+    let hand_weight: Int?
 }
 
 
@@ -93,31 +93,31 @@ struct Country: Codable {
 
 // MARK: - Duration
 struct Duration: Codable {
-    let departure, durationReturn, total: Int?
+    let departure, duration_return, total: Int?
 }
 
 
 // MARK: - Route
 struct Route: Codable {
-    let id, combinationID: String?
-    let routeReturn, originalReturn: Int?
-    let source, foundOn: String?
+    let id, combination_iD: String?
+    let route_return, original_return: Int?
+    let source, found_on: String?
     let price, aTime, dTime, aTimeUTC: Int?
     let dTimeUTC: Int?
     let mapIdfrom, mapIdto: String?
     let cityTo, cityFrom: String?
     let flyTo: String?
-    let airline, operatingCarrier: String?
+    let airline, operating_carrier: String?
     let equipment: String?
     let flyFrom: String?
-    let latFrom, lngFrom, latTo, lngTo: Double?
-    let flightNo: Int?
-    let refreshTimestamp: Int?
-    let bagsRecheckRequired, guarantee: Bool?
-    let fareBasis, fareFamily: String?
-    let lastSeen: Int?
-    let operatingFlightNo: String?
-    let followingAirportChange: Bool?
+//    let latFrom, lngFrom, latTo, lngTo: Double?
+    let flight_no: Int?
+//    let refreshTimestamp: Int?
+    let bags_recheck_required, guarantee: Bool?
+    let fare_basis, fare_family: String?
+//    let lastSeen: Int?
+    let operating_flight_no: String?
+//    let followingAirportChange: Bool?
 }
 
 // MARK: - Hashtag

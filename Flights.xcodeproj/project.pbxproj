@@ -15,10 +15,14 @@
 		6D13816C22EE0006000C3EA3 /* TopDestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13816B22EE0006000C3EA3 /* TopDestCell.swift */; };
 		6D13817022EE099F000C3EA3 /* TopDest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13816F22EE099F000C3EA3 /* TopDest.swift */; };
 		6D13817222EE186E000C3EA3 /* ClanendarVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13817122EE186E000C3EA3 /* ClanendarVIewModel.swift */; };
+		6D13817422F7251B000C3EA3 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13817322F7251B000C3EA3 /* SplashScreenViewController.swift */; };
+		6D13817A22F73152000C3EA3 /* flight2.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D13817922F73151000C3EA3 /* flight2.json */; };
+		6D13817D22F745D6000C3EA3 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13817C22F745D6000C3EA3 /* Protocols.swift */; };
+		6D13817F22F75506000C3EA3 /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13817E22F75506000C3EA3 /* DetailsCell.swift */; };
+		6D13818122F755C7000C3EA3 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13818022F755C7000C3EA3 /* DetailsViewModel.swift */; };
 		6DBE373222DCE856000BE67A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE373122DCE856000BE67A /* AppDelegate.swift */; };
 		6DBE373422DCE856000BE67A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE373322DCE856000BE67A /* ViewController.swift */; };
 		6DBE373722DCE856000BE67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBE373522DCE856000BE67A /* Main.storyboard */; };
-		6DBE373A22DCE857000BE67A /* Flights.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE373822DCE857000BE67A /* Flights.xcdatamodeld */; };
 		6DBE373C22DCE85E000BE67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DBE373B22DCE85E000BE67A /* Assets.xcassets */; };
 		6DBE373F22DCE85E000BE67A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBE373D22DCE85E000BE67A /* LaunchScreen.storyboard */; };
 		6DBE374A22DCFFF9000BE67A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE374922DCFFF9000BE67A /* CardView.swift */; };
@@ -45,11 +49,15 @@
 		6D13816B22EE0006000C3EA3 /* TopDestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDestCell.swift; sourceTree = "<group>"; };
 		6D13816F22EE099F000C3EA3 /* TopDest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDest.swift; sourceTree = "<group>"; };
 		6D13817122EE186E000C3EA3 /* ClanendarVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanendarVIewModel.swift; sourceTree = "<group>"; };
+		6D13817322F7251B000C3EA3 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		6D13817922F73151000C3EA3 /* flight2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flight2.json; sourceTree = "<group>"; };
+		6D13817C22F745D6000C3EA3 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		6D13817E22F75506000C3EA3 /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		6D13818022F755C7000C3EA3 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		6DBE372E22DCE856000BE67A /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBE373122DCE856000BE67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DBE373322DCE856000BE67A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6DBE373622DCE856000BE67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6DBE373922DCE857000BE67A /* Flights.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flights.xcdatamodel; sourceTree = "<group>"; };
 		6DBE373B22DCE85E000BE67A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DBE373E22DCE85E000BE67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DBE374022DCE85E000BE67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,7 +117,7 @@
 				6DBE373B22DCE85E000BE67A /* Assets.xcassets */,
 				6DBE373D22DCE85E000BE67A /* LaunchScreen.storyboard */,
 				6DBE374022DCE85E000BE67A /* Info.plist */,
-				6DBE373822DCE857000BE67A /* Flights.xcdatamodeld */,
+				6D13817922F73151000C3EA3 /* flight2.json */,
 			);
 			path = Flights;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 				6DBE375A22E11CB4000BE67A /* FlightsDetailCell.swift */,
 				6D13816B22EE0006000C3EA3 /* TopDestCell.swift */,
 				6D13816522E8D14F000C3EA3 /* RoutCell.swift */,
+				6D13817E22F75506000C3EA3 /* DetailsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -141,6 +150,7 @@
 				6D13815B22E4C1E5000C3EA3 /* MainViewController.swift */,
 				6D13815F22E8B3A4000C3EA3 /* AutoSegTableViewController.swift */,
 				6D13816322E8D114000C3EA3 /* RoutsViewController.swift */,
+				6D13817322F7251B000C3EA3 /* SplashScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,6 +172,7 @@
 				6DBE375522DE2B87000BE67A /* AppManager.swift */,
 				6DBE376122E3598E000BE67A /* Storyboarded.swift */,
 				6DBE376322E35B51000BE67A /* FlowManager.swift */,
+				6D13817C22F745D6000C3EA3 /* Protocols.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 				6DBE375D22E2E9D0000BE67A /* FlightsSearchViewModel.swift */,
 				6D13816722E8D28B000C3EA3 /* RoutsViewModel.swift */,
 				6D13817122EE186E000C3EA3 /* ClanendarVIewModel.swift */,
+				6D13818022F755C7000C3EA3 /* DetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -262,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DBE373F22DCE85E000BE67A /* LaunchScreen.storyboard in Resources */,
+				6D13817A22F73152000C3EA3 /* flight2.json in Resources */,
 				6DBE373C22DCE85E000BE67A /* Assets.xcassets in Resources */,
 				6DBE373722DCE856000BE67A /* Main.storyboard in Resources */,
 			);
@@ -317,23 +330,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D13816422E8D114000C3EA3 /* RoutsViewController.swift in Sources */,
+				6D13817D22F745D6000C3EA3 /* Protocols.swift in Sources */,
 				6D13816C22EE0006000C3EA3 /* TopDestCell.swift in Sources */,
 				6DBE375922DE3396000BE67A /* Result.swift in Sources */,
 				6DBE376622E3695B000BE67A /* SelectionInformation.swift in Sources */,
 				6DBE374F22DD139A000BE67A /* SearchViewController.swift in Sources */,
-				6DBE373A22DCE857000BE67A /* Flights.xcdatamodeld in Sources */,
 				6DBE373422DCE856000BE67A /* ViewController.swift in Sources */,
 				6DBE375E22E2E9D0000BE67A /* FlightsSearchViewModel.swift in Sources */,
 				6DBE374A22DCFFF9000BE67A /* CardView.swift in Sources */,
 				6D13816022E8B3A4000C3EA3 /* AutoSegTableViewController.swift in Sources */,
 				6D13817222EE186E000C3EA3 /* ClanendarVIewModel.swift in Sources */,
+				6D13818122F755C7000C3EA3 /* DetailsViewModel.swift in Sources */,
 				6D13815C22E4C1E5000C3EA3 /* MainViewController.swift in Sources */,
 				6DBE375322DE286A000BE67A /* Network.swift in Sources */,
 				6DBE373222DCE856000BE67A /* AppDelegate.swift in Sources */,
 				6DBE375622DE2B87000BE67A /* AppManager.swift in Sources */,
 				6DBE376422E35B51000BE67A /* FlowManager.swift in Sources */,
+				6D13817422F7251B000C3EA3 /* SplashScreenViewController.swift in Sources */,
 				6D13816622E8D14F000C3EA3 /* RoutCell.swift in Sources */,
 				6DBE375B22E11CB4000BE67A /* FlightsDetailCell.swift in Sources */,
+				6D13817F22F75506000C3EA3 /* DetailsCell.swift in Sources */,
 				6D13816822E8D28B000C3EA3 /* RoutsViewModel.swift in Sources */,
 				6DBE376222E3598E000BE67A /* Storyboarded.swift in Sources */,
 				6D13817022EE099F000C3EA3 /* TopDest.swift in Sources */,
@@ -536,19 +552,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		6DBE373822DCE857000BE67A /* Flights.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6DBE373922DCE857000BE67A /* Flights.xcdatamodel */,
-			);
-			currentVersion = 6DBE373922DCE857000BE67A /* Flights.xcdatamodel */;
-			path = Flights.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 6DBE372622DCE856000BE67A /* Project object */;
 }

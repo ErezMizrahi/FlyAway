@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol didSelectFlight: class{
-    func showRouts(_ route: [Route]?, data: Datum)
-}
-
-
 class SearchViewController: UIViewController, Storyboarded {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     

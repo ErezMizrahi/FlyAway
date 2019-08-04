@@ -15,8 +15,7 @@ class RoutCell: UITableViewCell {
     @IBOutlet weak var routTo: UILabel!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
     }
 
      func populate(_ vm: RoutsViewModel){
