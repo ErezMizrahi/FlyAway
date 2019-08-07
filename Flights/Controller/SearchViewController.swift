@@ -21,10 +21,28 @@ class SearchViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Flights"
-     
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(changeDirection))
         
+        collectionview.delegate = self
+        collectionview.dataSource = self
+        apiCall(info: info)
+     
+        }
+    
+    @objc func changeDirection() {
+        guard let info = self.info else { return }
+        let reversedInfo = SelectionInformation(startDate: info.startDate, endDate: info.endDate, flyFrom: info.flyTo, flyTo: info.flyFrom, numberOfPassngers: "1")
+        
+            self.indicator.isHidden = false
+            self.apiCall(info: reversedInfo)
+        
+//        apiCall(info: reversedInfo)
+    }
+    
+    private func apiCall(info : SelectionInformation?) {
         AppManager.shared.getFlights(info: info!) {[weak self] (res, err) in
             if let error = err {
+                
                 print("this is an error with the server call: \(error)")
             }
             guard let self = self, let res = res else { return }
@@ -32,8 +50,7 @@ class SearchViewController: UIViewController, Storyboarded {
             self.updateIndicator()
             self.updateCollection()
         }
-        
-        }
+    }
     
     func convertResultToVM(result res: Result){
         arr = res.data?.compactMap{ FlightsSearchViewModel.init($0)}
@@ -44,14 +61,12 @@ class SearchViewController: UIViewController, Storyboarded {
     }
     
     func updateCollection(){
-        collectionview.delegate = self
-        collectionview.dataSource = self
         collectionview.reloadData()
     }
     
     func updateIndicator(){
-        indicator.stopAnimating()
-        indicator.isHidden = !self.indicator.isHidden
+        indicator.isAnimating ? indicator.stopAnimating() : indicator.startAnimating()
+        indicator.isHidden = !indicator.isHidden
     }
     }
     
@@ -81,6 +96,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         self.routeDelegate?.showRouts(route,data: d)
     }
  
+    
   
     
 }

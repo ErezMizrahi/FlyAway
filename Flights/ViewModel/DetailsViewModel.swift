@@ -15,7 +15,7 @@ struct DetailsVM {
     let flightDuration: String
     let bagHeight, bagWidth, bagLength, bagWeight: String
     let nights: String
-//    let flightNum: String
+    let bookingUrl: String
 }
 
 extension DetailsVM {
@@ -29,5 +29,6 @@ extension DetailsVM {
         self.flightBagPrice = "Bags Price: " + (data.bags_price?["1"]?.description ?? "")
         self.nights = "Nights In Dest: " + (data.nightsInDest?.description ?? "")
 //        self.flightNum = "Flight Number " + (data.route?[0].flight_no?.description ?? "")
+        self.bookingUrl = data.deep_link ?? ""
     }
 }

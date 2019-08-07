@@ -19,10 +19,14 @@ class DetailsCell: UITableViewCell {
     @IBOutlet weak var bagCostLabel: UILabel!
     @IBOutlet weak var flightPriceLabel: UILabel!
     
+    var buttonTap: (() ->Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
     }
+    
+    
     func populate(vm: DetailsVM) {
         self.flightPriceLabel.text = vm.flightPrice
         self.nightsInDestLabel.text = vm.nights
@@ -35,5 +39,8 @@ class DetailsCell: UITableViewCell {
 //        self.fromCityLabel.text = vm.flightNum
     }
 
-
+    @IBAction func goToWebAction(_ sender: UIButton) {
+        buttonTap?()
+    }
+    
 }

@@ -54,6 +54,10 @@ extension RoutsViewController: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellInfo", for: indexPath) as! DetailsCell
             let vm = DetailsVM(data: infoVM!)
             cell.populate(vm: vm)
+            cell.buttonTap = {
+                guard let url = URL(string: vm.bookingUrl) else { return }
+                UIApplication.shared.open(url)
+            }
             return cell
         }
 

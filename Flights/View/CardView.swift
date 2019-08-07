@@ -14,7 +14,7 @@ class CardView: UIButton {
         super.init(frame: frame)
         self.layer.cornerRadius = 10
 //        self.layer.masksToBounds = true
-        self.backgroundColor = #colorLiteral(red: 0.2143253251, green: 0.612088957, blue: 0.9750497347, alpha: 1)
+        self.backgroundColor = #colorLiteral(red: 0, green: 0.5690457821, blue: 0.5746168494, alpha: 1)
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize.zero
         self.layer.shadowRadius = 10
@@ -25,7 +25,7 @@ class CardView: UIButton {
         super.init(coder: aDecoder)
         self.layer.cornerRadius = 10
 //        self.layer.masksToBounds = true
-        self.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        self.backgroundColor = #colorLiteral(red: 0, green: 0.5690457821, blue: 0.5746168494, alpha: 1)
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize.zero
         self.layer.shadowRadius = 10

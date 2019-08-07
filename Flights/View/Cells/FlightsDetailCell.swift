@@ -15,7 +15,10 @@ class FlightsDetailCell: UICollectionViewCell {
     @IBOutlet weak var departureLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!
     
-   
+    override func awakeFromNib() {
+        self.layer.cornerRadius = 25
+        self.layer.masksToBounds = true
+    }
     
     func populateCell(with info: FlightsSearchViewModel) {
         fromLabel.text = "\(info.fromString) to \(info.toString)"

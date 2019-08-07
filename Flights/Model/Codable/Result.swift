@@ -69,6 +69,7 @@ struct Datum: Codable{
     let fly_duration: String?
     let duration: Duration?
     let hashtags: [String]?
+    let deep_link: String?
 //    let facilitatedBookingAvailable: Bool?
     let bookingToken: String?
     let quality: Double?
